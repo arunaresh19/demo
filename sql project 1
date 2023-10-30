@@ -1,4 +1,4 @@
-eate table Hotelhyatt
+create table Hotelhyatt
 ( 
 ID Number(4),
 Dept varchar(15),
