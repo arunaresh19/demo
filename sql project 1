@@ -1,0 +1,176 @@
+eate table Hotelhyatt
+( 
+ID Number(4),
+Dept varchar(15),
+NAME varchar(15),
+Jobrole varchar(15),
+Salary number(6)
+);
+insert into Hotelhyatt values(1122,'ENGINEERING','Girish','Director',200000);
+insert into Hotelhyatt values(1123,'FINANCE','Balam','Director',250000);
+ insert into Hotelhyatt values(1124,'FRONTOFFICE','Gaurav','Director',150000);
+  insert into Hotelhyatt values(1125,'HOUSEKEEPING','Pavan','Director',250000);
+  insert into Hotelhyatt values(1126,'PURCHASE','Nilesh','Director',90000);
+  insert into Hotelhyatt values(1127,'BAKERY','Vikram','Director',150000);
+ insert into Hotelhyatt values(1128,'Cullnery','Gopi','Excutivechef',270000);
+  insert into Hotelhyatt values(1129,'SALES','Muhmad','Director',230000);
+  insert into Hotelhyatt values(1130,'Security','Elumalai','Director',240000);
+  insert into Hotelhyatt values(1131,'HR','Sudhir','Director',270000);
+ insert into Hotelhyatt values(1132,'ENGINEERING','Yogesh','Manager',120000);
+  insert into Hotelhyatt values(1133,'FINANCE','Neeraj','Manager',150000);
+insert into Hotelhyatt values(1134,'FRONTOFFICE','Suraj','Manager',130000);
+insert into Hotelhyatt values(1135,'HOUSEKEEPING','Sandesh','Manager',120000);
+insert into Hotelhyatt values(1136,'PURCHASE','Ajinkya','Manager',50000);
+ insert into Hotelhyatt values(1137,'BAKERY','Tribhuvan','Manager',70000);
+insert into Hotelhyatt values(1138,'Cullnery','Rahul','Manager',90000);
+  insert into Hotelhyatt values(1139,'SALES','Smita','Manager',800000);
+  insert into Hotelhyatt values(1140,'Security','Himanshu','Manager',85000);
+ insert into Hotelhyatt values(1141,'HR','Diditi','Manager',95000);
+ insert into Hotelhyatt values(1142,'ENGINEERING','Shailesh','Assistmgr',50000);
+  insert into Hotelhyatt values(1143,'FINANCE','Sanjay','Assistmgr',60000);
+ insert into Hotelhyatt values(1144,'FRONTOFFICE','Yash','Assistmgr',60000);
+  insert into Hotelhyatt values(1145,'HOUSEKEEPING','Sumanta','Assistmgr',55000);
+ insert into Hotelhyatt values(1146,'PURCHASE','Vikas','Assistmgr',45000);
+  insert into Hotelhyatt values(1147,'BAKERY','Mohini','Assistmgr',35000);
+  insert into Hotelhyatt values(1148,'Cullnery','Deepak','Assistmgr',70000);
+  insert into Hotelhyatt values(1149,'SALES','Mohit','Assistmgr',65000);
+ insert into Hotelhyatt values(1150,'Security','Ranjeet','Assistmgr',60000);
+ insert into Hotelhyatt values(1151,'HR','Divya','Assistmgr',45000);
+
+   insert into Hotelhyatt values(1152,'ENGINEERING','Vishal','Deskoperator',20000);
+ insert into Hotelhyatt values(1153,'FINANCE','Mayur','Deskoperator',21000);
+ insert into Hotelhyatt values(1154,'FRONTOFFICE','Sakshi','Deskoperator',20000);
+  insert into Hotelhyatt values(1155,'HOUSEKEEPING','Helan','Deskoperator',22000);
+ insert into Hotelhyatt values(1156,'PURCHASE','Antra','Deskoperator',21000);
+ insert into Hotelhyatt values(1157,'BAKERY','Manish','Deskoperator',19000);
+  insert into Hotelhyatt values(1158,'Cullnery','Shubham','Deskoperator',22000);
+ insert into Hotelhyatt values(1159,'SALES','Pusplata','Deskoperator',22000);
+  insert into Hotelhyatt values(1160,'Security','Rupali','Deskoperator',18000);
+ insert into Hotelhyatt values(1161,'HR','Diditi','Sanket',25000);
+
+  insert into Hotelhyatt values(1162,'ENGINEERING','Vishal','Trainee',9000);
+ insert into Hotelhyatt values(1163,'FINANCE','Samrudhi','Trainee',10000);
+  insert into Hotelhyatt values(1164,'FRONTOFFICE','Somlata','Trainee',7000);
+  insert into Hotelhyatt values(1165,'HOUSEKEEPING','vikram','Trainee',12000);
+ insert into Hotelhyatt values(1166,'PURCHASE','Shweta','Trainee',7000);
+ insert into Hotelhyatt values(1167,'BAKERY','Aman','Trainee',7000);
+insert into Hotelhyatt values(1168,'Cullnery','Nitesh','Trainee',8000);
+ insert into Hotelhyatt values(1169,'SALES','Priya','Trainee',9000);
+  insert into Hotelhyatt values(1170,'Security','Aryan','Trainee',9000);
+insert into Hotelhyatt values(1171,'HR','Akshay','Trainee',10000);
+
+// Display all Table details ?
+Select * from Hotelhyatt;
+// WAQ to save dml command 
+Commit;
+// Delete housekeeping department details 
+delete from hotelhyatt
+ where dept= 'HOUSEKEEPING';
+// Recover deleted department details 
+Rollback;
+// update salary of Engineering manager 
+update hotelhyatt
+  2  set salary=270000
+  3  where id =1122;
+// Display NAME and job role
+ - select name, jobrole from hotelhyatt;
+// add one more colume of Gender in table 
+alter table hotelhyatt
+  2  add(Gender varchar(6));
+// Rename table name as HYATTREGENCY
+rename hotelhyatt to hyattregency;
+// Modify column name size
+alter table hyattregency
+   2  modify name varchar(20);
+// waq to get the list of manager whose salary is greter than 50000.
+select * from hyattregency
+  2  where jobrole='Manager' and Salary>50000;
+//WAQ to get the list of trainee whose salary is lesss than 10000
+select * from hyattregency
+  2  where jobrole='trainee' or Salary<10000;
+// WAQ to get details of emp whose salary is between 20000 to 90000
+select * from hyattregency
+  2  where salary between 10000 and 90000;
+// WAQ to get name whose name start with V
+select * from hyattregency
+  2  where name like 'V%';
+// waq to get details where jobrole is not null
+select * from hyattregency
+  2  where jobrole IS Not Null;
+// waq to get details where jobrole is null
+
+select * from hyattregency
+  2  where name IS Null;
+// WAQ to get max salary from table 
+select Max(Salary)from hyattregency;
+//WAQ to get max salary of Deskoperator 
+select Max(Salary)from hyattregency where jobrole='Deskoperator';
+// WAQ to get min salary of Director 
+select Min(Salary) from hyattregency
+  2  where Jobrole='Director';
+//WAQ to get max salary for trainee by using having and group by command 
+select max(Salary) from hyattregency
+  2  group by jobrole
+  3  having jobrole='Trainee';
+//WAQ to get name of max salary 
+select name,salary from hyattregency where salary
+  2  =(select max(salary)from hyattregency);
+// WAQ to get sum salary from table 
+select Sum(salary) from hyattregency;
+// WAQ to get sum salary of manager salary 
+select Sum(Salary) from hyattregency where jobrole='Manager';
+//WAQ to get average salary 
+select avg(Salary) from hyattregency;
+// WAQ to get sum salary of assistmgr
+select Sum(salary) as assistmgrSalary from hyattregency;
+//WAQ to get the count of employees jobrole wise .
+select count(*),jobrole from hyattregency
+   group by jobrole; 
+// WAQ to get the count of employee jobrole wise and in ascending order of the count ?
+select count(*),jobrole from hyattregency
+    group by jobrole
+    order by count(*)asc;
+
+//waq for table drop
+Drop table College;
+
+
+Create table CKCollege
+   (
+   ID Number(4),
+   Dept varchar(15),
+   NAME varchar(15),
+   Address varchar(15)
+   );
+insert into CKCollege values(1122,'Science','aruna','Bopkhel');
+insert into CKCollege values(1123,'History','Achal','Ramnagar');
+insert into CKCollege values(1124,'geography','Ashu','Ganeshnagar');
+insert into CKCollege values(1125,'Maths','Ankita','Vishrantwadi');
+insert into CKCollege values(1126,'Hindi','Vaishnavi','Dhanori');
+insert into CKCollege values(1127,'History','Vishnu','Lohegaon');
+insert into CKCollege values(1128,'English','Pratik','Vimannagar');
+insert into CKCollege values(1129,'BCA','Priyanka','Kalyaninagar');
+insert into CKCollege values(1130,'MCA','Kunal','Dighi');
+insert into CKCollege values(1131,'BSC','Sadik','Khadki');
+// WAQ for INNERJOIN
+select hyattregency.jobrole,hyattregency.salary,CKCollege.Address from hyattregency hyattregency inner join CKCollege on hyattregency.ID=CKCollege.ID;
+
+
+// WAQ Left outer join
+select hyattregency.jobrole,hyattregency.salary,CKCollege.Address from hyattregency hyattregency left join CKCollege on hyattregency.ID=CKCollege.ID;
+
+// WAQ Right outer join
+select hyattregency.jobrole,hyattregency.salary,CKCollege.Address from hyattregency hyattregency right join CKCollege on hyattregency.ID=CKCollege.ID;
+// WAQ Coss join 
+select hyattregency.dept,hyattregency.jobrole,hyattregency.salary,CKCollege.ID from hyattregency  cross join CKCollege;
+// WAQ Self join 
+select hyattregency.dept,CKCollege.name
+  2  from hyattregency, CKCollege
+  3  where hyattregency.id < CKCollege.id;
+0 comments on commit 0997ef6
+@arunaresh19
+ 
+Leave a comment
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+ You’re not receiving notifications from this thread.
